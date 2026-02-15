@@ -5,7 +5,7 @@
 - Check: GitHub for repo activity (stars, issues, PRs) → Alert if: Important
 - Check: Job listings (LinkedIn, Indeed, AI jobs) → Alert if: New relevant openings
 - Check: Markets (crypto/stocks if tools available) → Alert if: Significant drops (>5%)
-- Check: Email for urgent messages → Alert if: Important/relevant
+- Check: Email (Gmail) for urgent/important messages → Alert if: Important/relevant
 - Check: Session token usage → Archive if >75%
 
 ## Interval & Hours
