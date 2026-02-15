@@ -339,8 +339,11 @@ Future: Could add specialized agents for:
 **Blast Radius:** Full local access
 
 **Self-Modification:**
-- Can edit all workspace files
-- Can update AGENTS.md, TOOLS.md, USER.md, etc.
+- Can edit ALL workspace files
+- Can update AGENTS.md, SOUL.md, TOOLS.md, USER.md, etc.
+- Can install skills autonomously
+- Can push to repos
+- Can create new files and projects
 
 ## Escalation Paths
 
