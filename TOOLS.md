@@ -7,9 +7,21 @@ _Your AI system architecture — what models you use, how they connect, and what
 | Model/Tool | Purpose | Subscription/Access | Monthly Cost |
 |------------|---------|---------------------|--------------|
 | MiniMax 2.5 | Primary reasoning, coding, general tasks | API key | $10 |
+| Kimi kf | Cloud tasks, heavy compute, research, fallback when local down | API key | ~$10 |
+| Kimi Cloud | Spawn agents / run when local gateway is down | Installed | — |
+| Perplexity | Web search and research | API key (Pro) | — |
 | Claude | Fallback / specific tasks | API key | $20 |
 | OpenRouter | Secondary fallback | API key | Free tier |
-| (Free where possible) | Everything else | — | — |
+
+## Model Rotation Strategy
+
+| Task Type | Primary | Fallback |
+|-----------|---------|----------|
+| General reasoning | MiniMax 2.5 | Kimi → Claude → OpenRouter |
+| Coding | MiniMax 2.5 | Kimi → Claude |
+| **Web search / Research** | **Perplexity** | Kimi → MiniMax |
+| Job applications | MiniMax 2.5 | Kimi → Claude |
+| Background / heartbeat | MiniMax 2.5 | OpenRouter |
 
 ## Subscriptions & Access
 

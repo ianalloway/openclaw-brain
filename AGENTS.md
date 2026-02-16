@@ -239,11 +239,11 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 
 | Domain/Task | Assigned Model | Why | Fallback |
 |-------------|----------------|-----|----------|
-| General reasoning | MiniMax 2.5 | Primary model | OpenRouter |
-| Coding | MiniMax 2.5 | Best for code | OpenRouter |
-| Job applications | MiniMax 2.5 | Help with cover letters | — |
-| Research | MiniMax 2.5 | Deep work | OpenRouter |
-| Background checks | MiniMax 2.5 | Keep simple | — |
+| General reasoning | MiniMax 2.5 | Primary model | Kimi → Claude |
+| Coding | MiniMax 2.5 | Best for code | Kimi → Claude |
+| Job applications | MiniMax 2.5 | Help with cover letters | Kimi |
+| Research | Perplexity | Best for web search & research | Kimi → MiniMax |
+| Background checks | MiniMax 2.5 | Keep simple | OpenRouter |
 
 ## Cost Routing
 
