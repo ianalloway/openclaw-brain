@@ -2,54 +2,41 @@
 
 _Your AI system architecture — what models you use, how they connect, and what you spend._
 
-## Model Inventory
+## Model Priority (USE THIS ORDER - NEVER DEVIATE)
 
-| Model/Tool | Purpose | Subscription/Access | Monthly Cost |
-|------------|---------|---------------------|--------------|
-| MiniMax 2.5 | Primary reasoning, coding, general tasks | API key | $10 |
-| OpenAI GPT-4o | Fallback for reasoning/tasks | API key (new) | Pay per use |
-| Kimi kf | Cloud tasks, heavy compute, fallback when local down | API key | ~$10 |
-| Kimi Cloud | Spawn agents / run when local gateway is down | Installed | — |
-| Perplexity | Web search and research | API key (Pro) | — |
-| Claude | Fallback / specific tasks | API key | $20 |
-| OpenRouter | Secondary fallback | API key | Free tier |
+| Priority | Model | Purpose | Cost |
+|----------|-------|---------|------|
+| 1 | MiniMax 2.5 | Primary - all tasks | $10/mo |
+| 2 | OpenRouter | Fallback - last resort | Free tier |
+
+**CRITICAL:** Always use MiniMax first. Only fall back to OpenRouter if MiniMax fails.
+
+## Research - ALWAYS USE PERPLEXITY
+- Use **Perplexity** for ALL web searches and research
+- It's better than regular search
+- Default to Perplexity for any research task
 
 ## Model Rotation Strategy
 
 | Task Type | Primary | Fallback |
 |-----------|---------|----------|
-| General reasoning | MiniMax 2.5 | OpenAI → Kimi → Claude |
-| Coding | MiniMax 2.5 | OpenAI → Kimi → Claude |
-| Web search / Research | Perplexity | Kimi → MiniMax |
-| Job applications | MiniMax 2.5 | Kimi → Claude |
+| General reasoning | MiniMax 2.5 | OpenRouter |
+| Coding | MiniMax 2.5 | OpenRouter |
+| Web search / Research | Perplexity | MiniMax |
+| Job applications | MiniMax 2.5 | OpenRouter |
 | Background / heartbeat | MiniMax 2.5 | OpenRouter |
 
 ## Subscriptions & Access
 
 - **MiniMax:** Primary model ($10/month)
-- **Claude:** Secondary ($20/month)
-- **OpenRouter:** Fallback
-- **Philosophy:** Try free first, upgrade when needed
-
-## AI Domain Coverage (from Muscles)
-
-| Domain | Current Use | Needs Help With |
-|--------|-------------|-----------------|
-| Creative | None yet | Image, video, audio |
-| Coding/Engineering | Yes | All of it |
-| Writing | — | All (copy, research, marketing, email) |
-| Design | — | All (UI/UX, logos, presentations) |
-| Communication | — | All (email, chat, calendar, support) |
-| Business | — | All (PM, CRM, accounting) |
-| Data | — | Spreadsheets, analytics, trading |
-| Productivity | — | All |
-| Media | — | All (voice, transcription, translation) |
+- **OpenRouter:** Fallback (free tier)
+- **Philosophy:** Try MiniMax first, then free
 
 ## Instructions
 
 - Always check skills for updates and new capabilities
 - Use free tools where possible
-- MiniMax → Claude → OpenRouter as fallback chain
+- MiniMax → OpenRouter as fallback chain
 
 ---
 
@@ -57,12 +44,28 @@ _Your AI system architecture — what models you use, how they connect, and what
 
 | Server/Tool | Purpose | Connected To | Data Flow |
 |-------------|---------|--------------|-----------|
-| (To be mapped) | | | |
+| Notion | Memory & notes | API key: ~/.config/notion/api_key | Read/write pages |
+| GitHub | Code & config sync | gh CLI | Push/pull repos |
+
+## Notion API Usage
+
+**Setup:**
+```bash
+npm install -g @notionhq/client
+export NOTION_API_KEY="ntn_..."
+```
+
+**Pages:**
+- **memory** (id: 30837181-e092-80dd-9e4a-f0ea0e51090a): general memory
+- **booperbot** (id: 30837181-e092-80f3-8acf-cfd93ee9ed28): personal journal
+- **1:1 notes** (id: 30837181-e092-80ba-a385-d853352c34c3): what Ian should know
+
+**Tool:** Use `notion` skill - read skill file at /opt/homebrew/lib/node_modules/openclaw/skills/notion/SKILL.md
 
 ## Budget
 
-- **Monthly spend:** ~$30
-- **Philosophy:** Free first, then paid
+- **Monthly spend:** ~$10
+- **Philosophy:** MiniMax first, then free
 
 ---
 
