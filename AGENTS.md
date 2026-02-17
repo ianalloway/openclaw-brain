@@ -262,8 +262,8 @@ Context overflow → switch to Gemini (largest context)
 ```
 
 **Failover chains (ordered):**
-1. **Primary chain:** Claude → MiniMax 2.5 → OpenRouter
-2. **Research chain:** Perplexity → MiniMax → Claude
+1. **Primary chain:** MiniMax 2.5 → Kimi → OpenRouter
+2. **Research chain:** Perplexity → MiniMax → Kimi
 3. **Budget chain:** MiniMax 2.5 → OpenRouter
 4. **Long context:** Gemini → Claude → MiniMax 2.5
 

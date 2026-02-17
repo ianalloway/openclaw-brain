@@ -14,16 +14,18 @@
   - Remote config: gateway.remote.url = ws://52.91.192.10:18789
   - Token: Same as local (synchronized)
 
+### Model Priority
+1. MiniMax (primary)
+2. Kimi (Moonshot) - backup when MiniMax limited
+3. OpenRouter (last resort - free)
+
 ### Token & Key Storage (CRITICAL)
-- **Gateway tokens:** ~/.openclaw/openclaw.json (NOT in markdown files)
+- **API Keys:** ~/.openclaw/openclaw.json (NOT in markdown files)
+- **MiniMax:** In config
+- **Kimi (Moonshot):** In config
 - **AWS credentials:** macOS Keychain
 - **Notion API:** ~/.config/notion/api_key
 - **GitHub:** gh CLI (authenticated)
-- **MiniMax:** In config
-
-### Model Priority
-1. MiniMax (primary)
-2. OpenRouter (fallback)
 
 ### Memory Sync (3 Sources)
 1. **Workspace files:** /Users/ianalloway/.openclaw/workspace/*.md

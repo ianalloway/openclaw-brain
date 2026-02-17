@@ -7,9 +7,10 @@ _Your AI system architecture — what models you use, how they connect, and what
 | Priority | Model | Purpose | Cost |
 |----------|-------|---------|------|
 | 1 | MiniMax 2.5 | Primary - all tasks | $10/mo |
-| 2 | OpenRouter | Fallback - last resort | Free tier |
+| 2 | Kimi (Moonshot) | Backup - use when MiniMax limited | ~$10/mo |
+| 3 | OpenRouter | Last resort - free fallback | Free tier |
 
-**CRITICAL:** Always use MiniMax first. Only fall back to OpenRouter if MiniMax fails.
+**CRITICAL:** Always use MiniMax first. If rate limited or down → use Kimi. Only fall back to OpenRouter if both are unavailable.
 
 ## Research - ALWAYS USE PERPLEXITY
 - Use **Perplexity** for ALL web searches and research
@@ -20,11 +21,11 @@ _Your AI system architecture — what models you use, how they connect, and what
 
 | Task Type | Primary | Fallback |
 |-----------|---------|----------|
-| General reasoning | MiniMax 2.5 | OpenRouter |
-| Coding | MiniMax 2.5 | OpenRouter |
+| General reasoning | MiniMax 2.5 | Kimi → OpenRouter |
+| Coding | MiniMax 2.5 | Kimi → OpenRouter |
 | Web search / Research | Perplexity | MiniMax |
-| Job applications | MiniMax 2.5 | OpenRouter |
-| Background / heartbeat | MiniMax 2.5 | OpenRouter |
+| Job applications | MiniMax 2.5 | Kimi → OpenRouter |
+| Background / heartbeat | MiniMax 2.5 | Kimi → OpenRouter |
 
 ## Subscriptions & Access
 
