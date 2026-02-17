@@ -6,10 +6,20 @@
 - **Local Gateway:** ws://127.0.0.1:18789 (Ian's Mac)
   - Status: Running 24/7 via LaunchAgent
   - Models: MiniMax → OpenRouter
+  - Token: In ~/.openclaw/openclaw.json
   
 - **Cloud Gateway:** ws://52.91.192.10:18789 (AWS EC2 t3.small)
-  - Status: Running 24/7 
+  - Status: Running 24/7, PAIRED with local
   - Models: MiniMax → OpenRouter
+  - Remote config: gateway.remote.url = ws://52.91.192.10:18789
+  - Token: Same as local (synchronized)
+
+### Token & Key Storage (CRITICAL)
+- **Gateway tokens:** ~/.openclaw/openclaw.json (NOT in markdown files)
+- **AWS credentials:** macOS Keychain
+- **Notion API:** ~/.config/notion/api_key
+- **GitHub:** gh CLI (authenticated)
+- **MiniMax:** In config
 
 ### Model Priority
 1. MiniMax (primary)

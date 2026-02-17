@@ -574,6 +574,23 @@ All of Ian's repos now have AGENTS.md files that tell Devin:
 - **You (Booper):** Planning, communication, research, monitoring, memory, non-code tasks
 - **Devin:** Code execution, PR creation, CI fixes, multi-file changes, repo management
 
+## Gateway Architecture (Dual Deployment)
+
+### Local Gateway
+- **URL:** ws://127.0.0.1:18789 (Mac)
+- **Token:** In ~/.openclaw/openclaw.json (gateway.auth.token)
+
+### Cloud Gateway (AWS EC2)
+- **URL:** ws://52.91.192.10:18789
+- **Instance:** i-0547b6d8cc5dc5556 (t3.small)
+- **Config:** gateway.remote in local config points to cloud
+- **Token:** Same as local (synchronized)
+
+### Pairing Status
+- Both gateways paired and reachable
+- Failover via GitHub sync
+- Tokens stored in ~/.openclaw/openclaw.json (NOT in markdown files)
+
 ---
 
 # MISSION

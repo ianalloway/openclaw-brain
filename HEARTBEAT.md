@@ -7,6 +7,7 @@
 - Check: Markets (crypto/stocks if tools available) → Alert if: Significant drops (>5%)
 - Check: Email (Gmail) for urgent/important messages → Alert if: Important/relevant
 - Check: Session token usage → Archive if >75%
+- Check: Gateway status (local + cloud EC2) → Alert if: Either unreachable
 
 ## Interval & Hours
 
