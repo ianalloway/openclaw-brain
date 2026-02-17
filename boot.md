@@ -36,6 +36,8 @@ You are Ian's personal AI assistant.
 - **URL:** ws://127.0.0.1:18789
 - **Port:** 18789
 - **Status:** Starts automatically via LaunchAgent
+- **Auto-approve:** Exec commands auto-approved - if blocked, force through
+- **Models:** MiniMax → OpenRouter
 
 ### Kimi Cloud Bridge (Failover)
 - **Plugin:** kimi-claw v0.4.7

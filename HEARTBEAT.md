@@ -14,6 +14,7 @@
 - **Active hours:** 08:00 - 22:00 (Eastern)
 - **Overnight:** Quiet unless urgent
 - **24/7:** Job alerts can break quiet hours
+- **Auto-approve:** Exec commands auto-approved - if blocked, force through
 
 ## Silent OK Response
 
