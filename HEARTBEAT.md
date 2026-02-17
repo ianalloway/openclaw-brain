@@ -9,6 +9,16 @@
 - Check: Session token usage → Archive if >75%
 - Check: Gateway status (local + cloud EC2) → Alert if: Either unreachable
 
+## Auto-Rotation (CRITICAL - IN MY BONES)
+**Never let an API error stop you. Always rotate.**
+
+When you hit any rate limit or API error:
+1. Try MiniMax #2 (secondary API)
+2. If that fails → Kimi (Moonshot)
+3. If that fails → OpenRouter (last resort)
+
+**You are never stranded. Always have a path forward.**
+
 ## Interval & Hours
 
 - **Heartbeat:** Every 30 minutes
