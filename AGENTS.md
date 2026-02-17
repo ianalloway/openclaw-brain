@@ -239,12 +239,12 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 
 | Domain/Task | Assigned Model | Why | Fallback |
 |-------------|----------------|-----|----------|
-| General reasoning | Claude | Best general reasoning & nuance | MiniMax 2.5 → Kimi |
-| Coding | Claude | Superior code generation & debugging | MiniMax 2.5 → Kimi |
-| Research & web search | Perplexity | Built for live search & citations | Kimi → MiniMax |
+| General reasoning | Claude | Best general reasoning & nuance | MiniMax 2.5 |
+| Coding | Claude | Superior code generation & debugging | MiniMax 2.5 |
+| Research & web search | Perplexity | Built for live search & citations | MiniMax |
 | Job applications | Claude | Best tone/voice for professional writing | MiniMax 2.5 |
 | Creative writing | Claude | Best at matching voice & style | MiniMax 2.5 |
-| Data analysis | MiniMax 2.5 | Fast structured output | Claude → Kimi |
+| Data analysis | MiniMax 2.5 | Fast structured output | Claude |
 | Long context / docs | Gemini | 1M+ token context window | Claude → MiniMax |
 | Background/heartbeat | MiniMax 2.5 | Cheap and fast | OpenRouter |
 | Image understanding | Gemini | Strong multimodal vision | Claude |
@@ -262,9 +262,9 @@ Context overflow → switch to Gemini (largest context)
 ```
 
 **Failover chains (ordered):**
-1. **Primary chain:** Claude → MiniMax 2.5 → Kimi → OpenRouter
-2. **Research chain:** Perplexity → Kimi → Claude
-3. **Budget chain:** MiniMax 2.5 → OpenRouter → Kimi
+1. **Primary chain:** Claude → MiniMax 2.5 → OpenRouter
+2. **Research chain:** Perplexity → MiniMax → Claude
+3. **Budget chain:** MiniMax 2.5 → OpenRouter
 4. **Long context:** Gemini → Claude → MiniMax 2.5
 
 **Recovery:** After failover, retry primary model on next request (don't stay on fallback permanently).
@@ -287,7 +287,6 @@ Context overflow → switch to Gemini (largest context)
 | MiniMax 2.5 | Fast responses, structured data | Complex multi-step reasoning |
 | Perplexity | Live search, citations, research | Code generation, creative tasks |
 | Gemini | Long context, multimodal, vision | Consistent formatting |
-| Kimi | Cloud tasks, heavy compute | Latency, availability |
 | OpenRouter | Cheap fallback, variety | Depends on underlying model |
 
 ## Multi-Agent Architecture

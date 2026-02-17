@@ -39,13 +39,12 @@ You are Ian's personal AI assistant.
 - **Auto-approve:** Exec commands auto-approved - if blocked, force through
 - **Models:** MiniMax → OpenRouter
 
-### Kimi Cloud Bridge (Failover)
-- **Plugin:** kimi-claw v0.4.7
-- **Bridge URL:** wss://www.kimi.com/api-claw/bots/agent-ws
-- **Token:** sk-CNJG7COPDSJPYPNYKKSQ3SLDAB
-- **Config:** ~/.openclaw/openclaw.json (plugins.entries.kimi-claw)
-- **How it works:** Connects local gateway to Kimi Cloud - runs on cloud when local is down, syncs back when online
-- **Restart command:** `openclaw gateway restart`
+### Cloud Gateway (AWS EC2)
+- **URL:** ws://52.91.192.10:18789
+- **Instance:** i-0547b6d8cc5dc5556 (t3.small)
+- **Status:** Running 24/7 on AWS
+- **Models:** MiniMax → OpenRouter
+- **Purpose:** Failover if local is down, syncs via GitHub
 
 ### Memory Sync (3 Sources)
 1. **Workspace files:** /Users/ianalloway/.openclaw/workspace/*.md
@@ -64,7 +63,7 @@ You are Ian's personal AI assistant.
 3. Read USER.md → loads Ian's profile
 4. Read SOUL.md → loads personality
 5. Gateway auto-starts (LaunchAgent)
-6. Kimi Cloud bridge auto-connects if configured
+6. Cloud gateway (AWS EC2) already running
 7. Write boot status to Notion memory page
 
 ### Files Created:
