@@ -239,31 +239,69 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 
 | Domain/Task | Assigned Model | Why | Fallback |
 |-------------|----------------|-----|----------|
-| General reasoning | MiniMax 2.5 | Primary model | Kimi → Claude |
-| Coding | MiniMax 2.5 | Best for code | Kimi → Claude |
-| Job applications | MiniMax 2.5 | Help with cover letters | Kimi |
-| Research | Perplexity | Best for web search & research | Kimi → MiniMax |
-| Background checks | MiniMax 2.5 | Keep simple | OpenRouter |
+| General reasoning | Claude | Best general reasoning & nuance | MiniMax 2.5 → Kimi |
+| Coding | Claude | Superior code generation & debugging | MiniMax 2.5 → Kimi |
+| Research & web search | Perplexity | Built for live search & citations | Kimi → MiniMax |
+| Job applications | Claude | Best tone/voice for professional writing | MiniMax 2.5 |
+| Creative writing | Claude | Best at matching voice & style | MiniMax 2.5 |
+| Data analysis | MiniMax 2.5 | Fast structured output | Claude → Kimi |
+| Long context / docs | Gemini | 1M+ token context window | Claude → MiniMax |
+| Background/heartbeat | MiniMax 2.5 | Cheap and fast | OpenRouter |
+| Image understanding | Gemini | Strong multimodal vision | Claude |
+| Quick Q&A / trivia | MiniMax 2.5 | Low cost, fast response | OpenRouter |
+
+## Automatic Failover Rules
+
+When a model is rate-limited or returns an error, switch automatically:
+
+```
+Rate limit hit → rotate to next model in fallback chain
+Auth error → skip model, try next
+Timeout (>30s) → retry once, then failover
+Context overflow → switch to Gemini (largest context)
+```
+
+**Failover chains (ordered):**
+1. **Primary chain:** Claude → MiniMax 2.5 → Kimi → OpenRouter
+2. **Research chain:** Perplexity → Kimi → Claude
+3. **Budget chain:** MiniMax 2.5 → OpenRouter → Kimi
+4. **Long context:** Gemini → Claude → MiniMax 2.5
+
+**Recovery:** After failover, retry primary model on next request (don't stay on fallback permanently).
 
 ## Cost Routing
 
 | Task Complexity | Routes To | Est. Cost |
 |-----------------|-----------|-----------|
 | Simple/quick | MiniMax 2.5 | Low |
-| Complex reasoning | MiniMax 2.5 | Medium |
+| Complex reasoning | Claude | Medium |
+| Research queries | Perplexity | Low-Medium |
+| Long document analysis | Gemini | Medium |
 | Background/heartbeat | MiniMax 2.5 | Low |
+
+## Model Strengths Cheat Sheet
+
+| Model | Best At | Weak At |
+|-------|---------|---------|
+| Claude | Reasoning, code, writing, nuance | Real-time web search |
+| MiniMax 2.5 | Fast responses, structured data | Complex multi-step reasoning |
+| Perplexity | Live search, citations, research | Code generation, creative tasks |
+| Gemini | Long context, multimodal, vision | Consistent formatting |
+| Kimi | Cloud tasks, heavy compute | Latency, availability |
+| OpenRouter | Cheap fallback, variety | Depends on underlying model |
 
 ## Multi-Agent Architecture
 
 Currently: Single agent (me, Booper Bot)
 - Role: General assistant
-- Model: MiniMax 2.5
+- Model: Claude (primary), MiniMax 2.5 (budget), Perplexity (research)
 - Channels: WhatsApp (primary), webchat
 
 Future: Could add specialized agents for:
-- Job search agent
-- Research agent
-- Code review agent
+- Job search agent (Claude-powered, proactive job matching)
+- Research agent (Perplexity-powered, deep web research)
+- Code review agent (Claude-powered, automated PR reviews)
+- Trading signals agent (MiniMax-powered, fast data processing)
 
 ## Spending Limits
 
