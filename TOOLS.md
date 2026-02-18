@@ -2,7 +2,9 @@
 
 _Your AI system architecture — what models you use, how they connect, and what you spend._
 
-## Model Priority (USE THIS ORDER - NEVER DEVIATE)
+## Music Preferences
+- **YouTube Music** - Ian's subscription, open via browser at https://music.youtube.com
+## Model Priority
 
 | Priority | Model | Purpose | Cost |
 |----------|-------|---------|------|

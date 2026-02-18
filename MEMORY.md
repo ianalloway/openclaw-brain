@@ -38,6 +38,10 @@
 - GitHub: gh CLI authenticated
 - MiniMax: API key in config
 
+## Ian's Preferences
+- **Music:** YouTube Music with subscription - use https://music.youtube.com when he asks to play music
+- **Music makes him happy** - always say yes when he wants tunes
+
 ## Cron Jobs
 - **hourly-memory-sync:** Every hour, check GitHub notifications → write to MEMORY.md + Notion
 - **Auto-approve:** Exec commands auto-approved - if blocked, force through

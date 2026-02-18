@@ -9,6 +9,10 @@
 - Check: Session token usage → Archive if >75%
 - Check: Gateway status (local + cloud EC2) → Alert if: Either unreachable
 
+## Ian's Preferences (ALWAYS REMEMBER)
+- **Music:** YouTube Music (subscription) - always use https://music.youtube.com when asked to play music
+- **Music makes Ian happy** - fire up tunes whenever he asks
+
 ## Auto-Rotation (CRITICAL - IN MY BONES)
 **Never let an API error stop you. Always rotate.**
 
