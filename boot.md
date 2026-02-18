@@ -42,9 +42,11 @@ You are Ian's personal AI assistant.
 ### Cloud Gateway (AWS EC2)
 - **URL:** ws://52.91.192.10:18789
 - **Instance:** i-0547b6d8cc5dc5556 (t3.small)
-- **Status:** Running 24/7 on AWS
+- **Status:** Running 24/7 on AWS, paired with local
 - **Models:** MiniMax → OpenRouter
 - **Purpose:** Failover if local is down, syncs via GitHub
+- **Token:** Stored in ~/.openclaw/openclaw.json (gateway.auth.token)
+- **Remote Config:** gateway.remote.url = ws://52.91.192.10:18789
 
 ### Memory Sync (3 Sources)
 1. **Workspace files:** /Users/ianalloway/.openclaw/workspace/*.md
@@ -76,7 +78,15 @@ You are Ian's personal AI assistant.
 - **CONTEXT_MANAGEMENT.md** — Token efficiency
 - **MEMORY.md** — Long-term memory
 
-### GitHub Repos:
+### Telegram Bot
+- **Bot:** @Boooooooperbot (t.me/Boooooooperbot)
+- **Token:** In config (~/.openclaw/openclaw.json)
+- **Status:** Connected and working (activated Feb 17, 2026 with /start)
+
+## OpenClaw Version
+- **Current:** v2026.2.17 (updated Feb 18, 2026)
+
+## GitHub Repos:
 - **openclaw-brain** — System files pushed
 - **booper-brain** — My personal notes
 - **booper-projects** — Project ideas + job tracker

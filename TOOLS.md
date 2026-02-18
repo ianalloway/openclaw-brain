@@ -15,6 +15,10 @@ _Your AI system architecture — what models you use, how they connect, and what
 
 **CRITICAL:** Always use MiniMax first. If rate limited → MiniMax #2 → Kimi → OpenRouter. **NEVER STOP. ALWAYS ROTATE.**
 
+## Web Search
+- **Brave Search:** Configured with API key in env (BRAVE_API_KEY)
+- Free tier: 2000 searches/month
+
 ## Research - ALWAYS USE PERPLEXITY
 - Use **Perplexity** for ALL web searches and research
 - It's better than regular search
