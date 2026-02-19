@@ -75,6 +75,33 @@ export NOTION_API_KEY="ntn_..."
 - **Monthly spend:** ~$10
 - **Philosophy:** MiniMax first, then free
 
+## Skills (ClawHub)
+
+Installed skills in `~/.openclaw/workspace/skills/`:
+- **x-twitter** — X/Twitter operations (search, post, engage)
+- **finance** — Financial tracking and analysis
+- **marketing** — Marketing strategy and execution
+- **writing** — Writing in Ian's voice/style
+- **codebases** — Codebase analysis and navigation
+
+Use skills by mentioning them in requests. Example: "Use the writing skill to draft an email..."
+
 ---
 
 _Update this as we learn more about your AI usage._
+
+<!-- antfarm:workflows -->
+# Antfarm Workflows
+
+Antfarm CLI (always use full path to avoid PATH issues):
+`node ~/.openclaw/workspace/antfarm/dist/cli/cli.js`
+
+Commands:
+- Install: `node ~/.openclaw/workspace/antfarm/dist/cli/cli.js workflow install <name>`
+- Run: `node ~/.openclaw/workspace/antfarm/dist/cli/cli.js workflow run <workflow-id> "<task>"`
+- Status: `node ~/.openclaw/workspace/antfarm/dist/cli/cli.js workflow status "<task title>"`
+- Logs: `node ~/.openclaw/workspace/antfarm/dist/cli/cli.js logs`
+
+Workflows are self-advancing via per-agent cron jobs. No manual orchestration needed.
+<!-- /antfarm:workflows -->
+
